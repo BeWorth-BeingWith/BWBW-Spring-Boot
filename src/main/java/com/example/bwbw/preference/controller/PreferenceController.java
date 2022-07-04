@@ -1,5 +1,6 @@
 package com.example.bwbw.preference.controller;
 
+import com.example.bwbw.preference.dto.BadgeResponseDto;
 import com.example.bwbw.preference.dto.ReviewResponseDto;
 import com.example.bwbw.preference.dto.ReviewWriteRequestDto;
 import io.swagger.annotations.*;
@@ -80,7 +81,21 @@ public class PreferenceController {
     )
     @PostMapping("/write-review/done")
     public ResponseEntity<Void> reviewWriteDone(ReviewWriteRequestDto request){
-        //TODO: 리뷰 생성 로직 만드기
+        //TODO: 리뷰 생성 로직 만들기
+        return null;
+    }
+
+    @ApiOperation(value="bage 확인", notes = "지금 까지 모은 badge들 확인")
+    @ApiImplicitParams(
+            {
+                    @ApiImplicitParam(name = "accessToken", value = "유저 엑세스 토큰", dataType = "string"),
+                    @ApiImplicitParam(name = "expiredTime", value = "토큰 만료 시간", dataType = "time")
+            }
+    )
+    @ApiResponse(code=200, message = "성공 / content가 비어있으면 모두 리뷰를 남긴 것")
+    @GetMapping("/badge")
+    public ResponseEntity<BadgeResponseDto> badgeRead(String accessToken, LocalDateTime expiredTime){
+        //TODO: 정보 읽어오는 로직 만들기
         return null;
     }
 
