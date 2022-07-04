@@ -18,8 +18,8 @@ public class PreferenceController {
     @ApiOperation(value="review 보기", notes = "지금 까지 후기 모두 가져오기")
     @ApiImplicitParams(
             {
-                    @ApiImplicitParam(name = "accessToken", value = "유저 엑세스 토큰", dataType = "string"),
-                    @ApiImplicitParam(name = "expiredTime", value = "토큰 만료 시간", dataType = "time")
+                    @ApiImplicitParam(name = "accessToken", value = "유저 엑세스 토큰", dataTypeClass = String.class),
+                    @ApiImplicitParam(name = "expiredTime", value = "토큰 만료 시간", dataTypeClass = LocalDateTime.class)
             }
     )
     @ApiResponse(code=200, message = "성공 / content가 비어있으면 Empty")
@@ -34,8 +34,8 @@ public class PreferenceController {
     @ApiOperation(value="review 작성 페이지만 이동", notes = "지금 까지 리뷰 작성이 안된 페이지들만 가져오기")
     @ApiImplicitParams(
             {
-                    @ApiImplicitParam(name = "accessToken", value = "유저 엑세스 토큰", dataType = "string"),
-                    @ApiImplicitParam(name = "expiredTime", value = "토큰 만료 시간", dataType = "time")
+                    @ApiImplicitParam(name = "accessToken", value = "유저 엑세스 토큰", dataTypeClass = String.class),
+                    @ApiImplicitParam(name = "expiredTime", value = "토큰 만료 시간", dataTypeClass = LocalDateTime.class)
             }
     )
     @ApiResponse(code=200, message = "성공 / content가 비어있으면 모두 리뷰를 남긴 것")
@@ -50,8 +50,8 @@ public class PreferenceController {
     @ApiOperation(value="review 작성 페이지", notes = "지금 까지 리뷰 작성이 안된 사람들만 가져오기")
     @ApiImplicitParams(
             {
-                    @ApiImplicitParam(name = "accessToken", value = "유저 엑세스 토큰", dataType = "string"),
-                    @ApiImplicitParam(name = "roomId", value = "이용 했던 방 고유값", dataType = "long")
+                    @ApiImplicitParam(name = "accessToken", value = "유저 엑세스 토큰", dataTypeClass = String.class),
+                    @ApiImplicitParam(name = "roomId", value = "이용 했던 방 고유값", dataTypeClass = LocalDateTime.class)
             }
     )
     @ApiResponses({
@@ -68,10 +68,10 @@ public class PreferenceController {
     @ApiOperation(value = "사람별 리뷰 작성", notes = "선택한 사람 이름, 리뷰 내용, 방 번호, 액세스토큰들을 받고 리뷰작성 성공 여부를 넘깁니다.")
     @ApiImplicitParams(
             {
-                    @ApiImplicitParam(name = "accessToken", value = "유저 엑세스 토큰", dataType = "string"),
-                    @ApiImplicitParam(name = "name", value = "리뷰 작성 대상자 이름", dataType = "string"),
-                    @ApiImplicitParam(name = "review", value = "리뷰 내용", dataType = "string"),
-                    @ApiImplicitParam(name = "roomId", value = "방 번호", dataType = "long")
+                    @ApiImplicitParam(name = "accessToken", value = "유저 엑세스 토큰", dataTypeClass = String.class),
+                    @ApiImplicitParam(name = "name", value = "리뷰 작성 대상자 이름", dataTypeClass = String.class),
+                    @ApiImplicitParam(name = "review", value = "리뷰 내용", dataTypeClass = String.class),
+                    @ApiImplicitParam(name = "roomId", value = "방 번호", dataTypeClass = Long.class)
             }
     )
     @ApiResponses({
@@ -88,8 +88,8 @@ public class PreferenceController {
     @ApiOperation(value="bage 확인", notes = "지금 까지 모은 badge들 확인")
     @ApiImplicitParams(
             {
-                    @ApiImplicitParam(name = "accessToken", value = "유저 엑세스 토큰", dataType = "string"),
-                    @ApiImplicitParam(name = "expiredTime", value = "토큰 만료 시간", dataType = "time")
+                    @ApiImplicitParam(name = "accessToken", value = "유저 엑세스 토큰", dataTypeClass = String.class),
+                    @ApiImplicitParam(name = "expiredTime", value = "토큰 만료 시간", dataTypeClass = LocalDateTime.class)
             }
     )
     @ApiResponse(code=200, message = "성공 / content가 비어있으면 모두 리뷰를 남긴 것")
