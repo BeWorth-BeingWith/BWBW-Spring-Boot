@@ -7,6 +7,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -15,7 +17,7 @@ public class ReviewWriteRequestDto {
 
     private String accessToken;
 
-    private String expriedTime;
+    private LocalDateTime expriedTime;
 
     private String name;
 
