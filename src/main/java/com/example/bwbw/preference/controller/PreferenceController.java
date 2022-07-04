@@ -44,6 +44,23 @@ public class PreferenceController {
         return null;
     }
 
-
+    //TODO: 이름만 넘겨주면 이전 정보 활용할 수 있는지 물어보기
+    @ApiOperation(value="review 작성 페이지", notes = "지금 까지 리뷰 작성이 안된 사람들만 가져오기")
+    @ApiImplicitParams(
+            {
+                    @ApiImplicitParam(name = "accessToken", value = "유저 엑세스 토큰", dataType = "string"),
+                    @ApiImplicitParam(name = "roomId", value = "이용 했던 방 고유값", dataType = "int")
+            }
+    )
+    @ApiResponses({
+        @ApiResponse(code=200, message = "성공"),
+        @ApiResponse(code=400, message = "모두 리뷰를 남긴상태일 경우")
+        }
+    )
+    @GetMapping("write-review/write")
+    public ResponseEntity<List<String>> reviewWritePage(String accessToken, Integer roomId){
+        //TODO: 리뷰 작성하지 않은 이름들만 넘겨주는 로직 구현
+        return null;
+    }
 
 }
