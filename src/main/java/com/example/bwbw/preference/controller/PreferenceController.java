@@ -1,6 +1,7 @@
 package com.example.bwbw.preference.controller;
 
 import com.example.bwbw.preference.dto.ReviewResponseDto;
+import com.example.bwbw.preference.dto.ReviewWriteRequestDto;
 import io.swagger.annotations.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -49,7 +50,7 @@ public class PreferenceController {
     @ApiImplicitParams(
             {
                     @ApiImplicitParam(name = "accessToken", value = "유저 엑세스 토큰", dataType = "string"),
-                    @ApiImplicitParam(name = "roomId", value = "이용 했던 방 고유값", dataType = "int")
+                    @ApiImplicitParam(name = "roomId", value = "이용 했던 방 고유값", dataType = "long")
             }
     )
     @ApiResponses({
@@ -58,8 +59,28 @@ public class PreferenceController {
         }
     )
     @GetMapping("write-review/write")
-    public ResponseEntity<List<String>> reviewWritePage(String accessToken, Integer roomId){
+    public ResponseEntity<List<String>> reviewWritePage(String accessToken, Long roomId){
         //TODO: 리뷰 작성하지 않은 이름들만 넘겨주는 로직 구현
+        return null;
+    }
+
+    @ApiOperation(value = "사람별 리뷰 작성", notes = "선택한 사람 이름, 리뷰 내용, 방 번호, 액세스토큰들을 받고 리뷰작성 성공 여부를 넘깁니다.")
+    @ApiImplicitParams(
+            {
+                    @ApiImplicitParam(name = "accessToken", value = "유저 엑세스 토큰", dataType = "string"),
+                    @ApiImplicitParam(name = "name", value = "리뷰 작성 대상자 이름", dataType = "string"),
+                    @ApiImplicitParam(name = "review", value = "리뷰 내용", dataType = "string"),
+                    @ApiImplicitParam(name = "roomId", value = "방 번호", dataType = "long")
+            }
+    )
+    @ApiResponses({
+            @ApiResponse(code=200, message = "성공"),
+            @ApiResponse(code=400, message = "이미 리뷰가 있는 경우")
+    }
+    )
+    @PostMapping("/write-review/done")
+    public ResponseEntity<Void> reviewWriteDone(ReviewWriteRequestDto request){
+        //TODO: 리뷰 생성 로직 만드기
         return null;
     }
 
