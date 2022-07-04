@@ -15,6 +15,8 @@ public class ReviewWriteRequestDto {
 
     private String accessToken;
 
+    private String expriedTime;
+
     private String name;
 
     private String review;
