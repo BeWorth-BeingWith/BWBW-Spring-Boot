@@ -10,8 +10,11 @@ import java.time.LocalDateTime;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@ApiModel(value = "리뷰 정보", description = "매칭한 사람, 식당 이름, 매칭 시간, 리뷰등이 적혀 있습니다.")
+@ApiModel(value = "리뷰 정보", description = "방 제목, 매칭한 인원 수, 식당 이름, 매칭 시간, 리뷰등이 적혀 있습니다.")
 public class ReviewResponseDto {
+
+    @ApiModelProperty(value = "방 제목", example = "해찬식당 뿌시러갈 사람들!!!")
+    private String title;
 
     @ApiModelProperty(value = "매칭 시간")
     private LocalDateTime matchingTime;
