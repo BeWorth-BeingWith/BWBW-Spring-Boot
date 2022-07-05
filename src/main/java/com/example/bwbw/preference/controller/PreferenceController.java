@@ -51,6 +51,7 @@ public class PreferenceController {
     @ApiImplicitParams(
             {
                     @ApiImplicitParam(name = "accessToken", value = "유저 엑세스 토큰", dataTypeClass = String.class),
+                    @ApiImplicitParam(name = "expiredTime", value = "토큰 만료 시간", dataTypeClass = LocalDateTime.class),
                     @ApiImplicitParam(name = "roomId", value = "이용 했던 방 고유값", dataTypeClass = LocalDateTime.class)
             }
     )
@@ -60,7 +61,7 @@ public class PreferenceController {
         }
     )
     @GetMapping("write-review/write")
-    public ResponseEntity<List<String>> reviewWritePage(@RequestBody String accessToken, @RequestBody Long roomId){
+    public ResponseEntity<List<String>> reviewWritePage(@RequestBody String accessToken, @RequestBody LocalDateTime expiredTime, @RequestBody Long roomId){
         //TODO: 리뷰 작성하지 않은 이름들만 넘겨주는 로직 구현
         return null;
     }
@@ -69,6 +70,7 @@ public class PreferenceController {
     @ApiImplicitParams(
             {
                     @ApiImplicitParam(name = "accessToken", value = "유저 엑세스 토큰", dataTypeClass = String.class),
+                    @ApiImplicitParam(name = "expiredTime", value = "토큰 만료 시간", dataTypeClass = LocalDateTime.class),
                     @ApiImplicitParam(name = "name", value = "리뷰 작성 대상자 이름", dataTypeClass = String.class),
                     @ApiImplicitParam(name = "review", value = "리뷰 내용", dataTypeClass = String.class),
                     @ApiImplicitParam(name = "roomId", value = "방 번호", dataTypeClass = Long.class)
