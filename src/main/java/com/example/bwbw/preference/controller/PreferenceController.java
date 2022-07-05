@@ -24,7 +24,7 @@ public class PreferenceController {
     )
     @ApiResponse(code=200, message = "성공 / content가 비어있으면 Empty")
     @GetMapping("/my-review")
-    public ResponseEntity<List<ReviewResponseDto>> reviewRead(String accessToken, LocalDateTime expiredTime){
+    public ResponseEntity<List<ReviewResponseDto>> reviewRead(@RequestBody String accessToken, @RequestBody LocalDateTime expiredTime){
 
         //TODO: Database에서 리뷰 내용을 가져오는 Serivce 로직을 실행, 없으면 데이터는 null status = 200 보냄
 
@@ -40,7 +40,7 @@ public class PreferenceController {
     )
     @ApiResponse(code=200, message = "성공 / content가 비어있으면 모두 리뷰를 남긴 것")
     @GetMapping("/write-review")
-    public ResponseEntity<List<ReviewResponseDto>> reviewWrite(String accessToken, LocalDateTime expiredTime){
+    public ResponseEntity<List<ReviewResponseDto>> reviewWrite(@RequestBody String accessToken, @RequestBody LocalDateTime expiredTime){
         //TODO: 리뷰 작성 안된 인원들만 추려서 데이터 전송
 
         return null;
@@ -60,7 +60,7 @@ public class PreferenceController {
         }
     )
     @GetMapping("write-review/write")
-    public ResponseEntity<List<String>> reviewWritePage(String accessToken, Long roomId){
+    public ResponseEntity<List<String>> reviewWritePage(@RequestBody String accessToken, @RequestBody Long roomId){
         //TODO: 리뷰 작성하지 않은 이름들만 넘겨주는 로직 구현
         return null;
     }
@@ -80,7 +80,7 @@ public class PreferenceController {
     }
     )
     @PostMapping("/write-review/done")
-    public ResponseEntity<Void> reviewWriteDone(ReviewWriteRequestDto request){
+    public ResponseEntity<Void> reviewWriteDone(@RequestBody ReviewWriteRequestDto request){
         //TODO: 리뷰 생성 로직 만들기
         return null;
     }
@@ -94,8 +94,28 @@ public class PreferenceController {
     )
     @ApiResponse(code=200, message = "성공 / content가 비어있으면 모두 리뷰를 남긴 것")
     @GetMapping("/badge")
-    public ResponseEntity<BadgeResponseDto> badgeRead(String accessToken, LocalDateTime expiredTime){
+    public ResponseEntity<BadgeResponseDto> badgeRead(@RequestBody String accessToken,@RequestBody LocalDateTime expiredTime){
         //TODO: 정보 읽어오는 로직 만들기
+        return null;
+    }
+
+    @ApiOperation(value="회원 탈퇴", notes = "회원 탈퇴를 진행")
+    @ApiImplicitParams(
+            {
+                    @ApiImplicitParam(name = "accessToken", value = "유저 엑세스 토큰", dataTypeClass = String.class),
+                    @ApiImplicitParam(name = "expiredTime", value = "토큰 만료 시간", dataTypeClass = LocalDateTime.class),
+                    @ApiImplicitParam(name = "password", value = "패스 워드", dataTypeClass = String.class)
+            }
+    )
+    @ApiResponses({
+            @ApiResponse(code=200, message = "회원 탈퇴 성공"),
+            @ApiResponse(code=401, message = "일치하지 않음")
+    })
+    @DeleteMapping("/delete/user")
+    public ResponseEntity<Void> deleteUser(@RequestBody String accessToken, @RequestBody LocalDateTime expiredTime, @RequestBody String password){
+
+        //TODO: 회원 탈퇴 로직 생성
+
         return null;
     }
 
