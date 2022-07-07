@@ -21,8 +21,7 @@ public class ShowMap {
 
     @ApiOperation(value = "처음 지도 불러오기",notes = "앱 실행 후 처음으로 지도를 불러오는 로직입니다")
     @GetMapping("/first-location")
-    @ApiImplicitParam(name = "accessToken", value = "유저 엑세스 토큰", dataTypeClass = String.class)
-    public ResponseEntity<List<ShowMapResponseDto>> mapLoad(String accessToken) {
+    public ResponseEntity<List<ShowMapResponseDto>> mapLoad() {
 
         //TODO: 앱 초기화면에 지도를 불러오는 로직, accessToken 만 유지되어 있다면 전달인자 없이도 호출
         return null;
@@ -33,11 +32,10 @@ public class ShowMap {
     @GetMapping("/restraunt")
     @ApiImplicitParams(
             {
-                    @ApiImplicitParam(name = "accessToken", value = "유저 엑세스 토큰", dataTypeClass = String.class),
                     @ApiImplicitParam(name = "restraunt", value = "매칭이 잡힌 식당의 좌표,이름 및 매칭내역", dataTypeClass = Restraunt.class)
             }
     )
-    public ResponseEntity<List<ShowMapResponseDto>> showPin(String accessToken, @RequestParam Restraunt restraunt) {
+    public ResponseEntity<List<ShowMapResponseDto>> showPin( @RequestParam Restraunt restraunt) {
 
         //TODO: 지도에서 매칭이 잡혀있는 식당들을 불러오는 로직
         return null;

@@ -20,5 +20,4 @@ public class MoveSchoolResponseDto {
    @ApiModelProperty(value = "y축", example = "127.060891")
    private double y;    //학교 좌표표
 
-
 }

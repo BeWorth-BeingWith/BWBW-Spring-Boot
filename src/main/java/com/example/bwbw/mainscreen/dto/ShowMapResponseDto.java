@@ -18,6 +18,6 @@ import java.util.List;
 public class ShowMapResponseDto {
 
     List<Restraunt> restraunts = new ArrayList<Restraunt>();    //식당(안에 식당리스트 클래스도 포함되어있음)
-    private String acessToekn;      //access token
+
 
 }

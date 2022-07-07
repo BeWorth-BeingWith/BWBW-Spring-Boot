@@ -20,17 +20,15 @@ import java.util.List;
 @RequiredArgsConstructor
 @RestController
 public class MoveSchool {
-
     @ApiOperation(value = "지도 보기",notes = "지도를 불러올때 매칭이 있는 식당 정보를 반환")
     @GetMapping("/school")
     @ApiImplicitParams(
             {
-                    @ApiImplicitParam(name = "accessToken", value = "유저 엑세스 토큰", dataTypeClass = String.class),
                     @ApiImplicitParam(name = "x", value = "학교좌표 x값", dataTypeClass = double.class),
                     @ApiImplicitParam(name = "y", value = "학교좌표 y값", dataTypeClass = double.class)
             }
     )
-    public ResponseEntity<List<ShowMapResponseDto>> moveToSchoolLocation(String accessToken, @RequestParam MoveSchoolResponseDto moveSchoolResponseDto) {
+    public ResponseEntity<List<ShowMapResponseDto>> moveToSchoolLocation(@RequestParam MoveSchoolResponseDto moveSchoolResponseDto) {
 
         //TODO: 지도에서 학교위치로 이동하는 메소드, MoveSchoolResponseDto 를 파라미터로 받아와 해당 좌표로 지도 포커싱을 이동
         //TODO: 지도의 포커싱을 움직인 다음 다시 포커싱 버튼을 터치해도 같은 메서드를 실행하면 될듯 합니다
