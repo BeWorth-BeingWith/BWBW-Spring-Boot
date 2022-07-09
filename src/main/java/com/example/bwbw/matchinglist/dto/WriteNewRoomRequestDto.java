@@ -1,7 +1,16 @@
 package com.example.bwbw.matchinglist.dto;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import java.time.LocalDateTime;
 
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class WriteNewRoomRequestDto { // 방 만들기 작성 처음 들어 갔을 때 Request
 
     private String shortText; // 짧은 모집글 (100자 제한)
@@ -11,36 +20,4 @@ public class WriteNewRoomRequestDto { // 방 만들기 작성 처음 들어 갔�
     private int peopleNum; // 모집 인원 수
 
     private LocalDateTime promiseTime; // 약속 시간
-
-    public String getShortText() {
-        return shortText;
-    }
-
-    public void setShortText(String shortText) {
-        this.shortText = shortText;
-    }
-
-    public String getPromiseLocation() {
-        return promiseLocation;
-    }
-
-    public void setPromiseLocation(String promiseLocation) {
-        this.promiseLocation = promiseLocation;
-    }
-
-    public int getPeopleNum() {
-        return peopleNum;
-    }
-
-    public void setPeopleNum(int peopleNum) {
-        this.peopleNum = peopleNum;
-    }
-
-    public LocalDateTime getPromiseTime() {
-        return promiseTime;
-    }
-
-    public void setPromiseTime(LocalDateTime promiseTime) {
-        this.promiseTime = promiseTime;
-    }
 }

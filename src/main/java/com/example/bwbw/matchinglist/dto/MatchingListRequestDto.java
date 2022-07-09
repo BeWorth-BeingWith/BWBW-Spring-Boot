@@ -1,22 +1,16 @@
 package com.example.bwbw.matchinglist.dto;
 
-import java.time.LocalDateTime;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class MatchingListRequestDto { // 모집공고 리스트 들어왔을 때 Request
 
     private String orderedBy;
-
-    public String getOrderedBy() {
-        return orderedBy;
-    }
-
-    public void setOrderedBy(String orderedBy) {
-        this.orderedBy = orderedBy;
-    }
-
-    public MatchingListRequestDto(String orderedBy) {
-        this.orderedBy = orderedBy;
-    }
 }
 
