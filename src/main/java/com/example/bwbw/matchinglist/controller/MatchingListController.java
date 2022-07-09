@@ -2,10 +2,9 @@ package com.example.bwbw.matchinglist.controller;
 
 import com.example.bwbw.matchinglist.dto.DetailMatchingPostResponseDto;
 import com.example.bwbw.matchinglist.dto.MatchingListResponseDto;
+import com.example.bwbw.matchinglist.dto.WriteNewRoomCompleteRequestDto;
 import com.example.bwbw.matchinglist.dto.WriteNewRoomResponseDto;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -45,9 +44,16 @@ public class MatchingListController {
 
     //    방 만들기 작성 완료 Controller
     @ApiOperation(value = "매칭 글 작성 완료", notes = "매칭 모집 글 작성 완료 후 반영")
+    @ApiImplicitParams(
+            {
+                    @ApiImplicitParam(name = "roomLeaderNick", value = "매칭 방 리더 닉네임", dataTypeClass = String.class),
+                    @ApiImplicitParam(name = "shortText", value = "짧은 모집글", dataTypeClass = String.class),
+                    @ApiImplicitParam(name = "roomId", value = "매칭 방 고유 번호", dataTypeClass = Long.class)
+            }
+    )
     @ApiResponse(code=200, message="성공")
     @PostMapping("/write-matching-post-done")
-    public ResponseEntity<List<>>  writeMatchingDone(){
+    public ResponseEntity<Void>  writeMatchingDone(@RequestBody WriteNewRoomCompleteRequestDto request){
 
         return null;
     }
