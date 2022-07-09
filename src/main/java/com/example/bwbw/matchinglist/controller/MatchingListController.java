@@ -1,13 +1,13 @@
 package com.example.bwbw.matchinglist.controller;
 
+import com.example.bwbw.matchinglist.dto.DetailMatchingPostResponseDto;
 import com.example.bwbw.matchinglist.dto.MatchingListResponseDto;
+import com.example.bwbw.matchinglist.dto.WriteNewRoomResponseDto;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -15,11 +15,9 @@ import java.util.List;
 @RestController // 컨트롤러 클래스 하위 메서드에 @ResponseBody 어노테이션을 붙이지 않아도 문자열과 JSON 등을 전송 가능
 @RequestMapping("/api")
 public class MatchingListController {
-    // Request 정렬 방법
-    // Response 식당[배열] (좌표, 식당이름, 식당리스트[배열]), 식당리스트 (이름, 인원수, 만나기로한 시간, 방 고유값)
 
     //    모집공고 리스트 들어왔을 때 Controller
-    @ApiOperation(value = "매칭 리스트 목록", notes = "모든 매칭 정보 가져오기")
+    @ApiOperation(value = "매칭 모집 리스트 목록", notes = "모든 매칭 정보 가져오기")
     @ApiResponse(code=200, message="성공")
     @GetMapping("/all-matching-list")
     public ResponseEntity<List<MatchingListResponseDto>> matchingListRead(){
@@ -27,20 +25,66 @@ public class MatchingListController {
         return null;
     }
 
+    //    모집공고 세부적으로 들어갔을 때 Controller
+    @ApiOperation(value = "세부 모집 공고", notes = "개별적인 세부 모집 공고 가져오기")
+    @ApiResponse(code=200, message="성공")
+    @GetMapping("/detail-matching-post")
+    public ResponseEntity<List<DetailMatchingPostResponseDto>>  detailPostRead(@RequestParam(name = "roomId", value = "방 고유값") Long roomId){
 
+        return null;
+    }
+
+    //    방 만들기 작성 처음 들어 갔을 때 Controller
+    @ApiOperation(value = "매칭 글 작성", notes = "매칭 모집 글 작성하기")
+    @ApiResponse(code=200, message="성공")
+    @PostMapping("/write-matching-post")
+    public ResponseEntity<WriteNewRoomResponseDto>  writeMatching(){
+
+        return null;
+    }
+
+    //    방 만들기 작성 완료 Controller
+    @ApiOperation(value = "매칭 글 작성 완료", notes = "매칭 모집 글 작성 완료 후 반영")
+    @ApiResponse(code=200, message="성공")
+    @PostMapping("/write-matching-post-done")
+    public ResponseEntity<List<>>  writeMatchingDone(){
+
+        return null;
+    }
+
+    //    내 매칭 확인 Controller
+    @ApiOperation(value = "나의 확정 매칭 확인", notes = "확정된 나의 매칭 약속 가져오기")
+    @ApiResponse(code=200, message="성공")
+    @GetMapping("/my-matching/confirm")
+    public ResponseEntity<dto>  confrimMyMatching(){
+
+        return null;
+    }
+
+    //    매칭 수정하기 Controller (처음 들어왔을 때)
+    @ApiOperation(value = "나의 매칭 글 수정", notes = "내가 작성한 매칭 글 수정하기")
+    @ApiResponse(code=200, message="성공")
+    @PostMapping("/revise-my-matching")
+    public ResponseEntity<dto?>  reviseMatching(){
+
+        return null;
+    }
+
+    //    매칭 수정하기 Controller (수정 완료)
+    @ApiOperation(value = "나의 매칭 글 수정 완료", notes = "나의 매칭 글 수정 완료 후 반영")
+    @ApiResponse(code=200, message="성공")
+    @PostMapping("/revise-my-matching/done")
+    public ResponseEntity<dto?>  reviseMatchingDone(){
+
+        return null;
+    }
+
+    //    매칭 삭제하기 Controller
+    @ApiOperation(value = "나의 매칭 글 삭제", notes = "내의 매칭 글 삭제하기")
+    @ApiResponse(code=200, message="성공")
+    @DeleteMapping("/delete/my-matching")
+    public ResponseEntity<Void>  deleteMatching(){
+
+        return null;
+    }
 }
-
-//    모집공고 세부적으로 들어갔을 때 Controller
-//    방 만들기 작성 처음 들어 갔을 때 Controller
-//    방 만들기 작성 완료 Controller
-//    내 매칭 확인 Controller
-//    매칭 수정하기 Controller (처음 들어왔을 때)
-//    매칭 수정하기 Controller (수정 완료)
-//    매칭 삭제하기 Controller
-
-//    review 보기
-//    review 작성 페이지로 이동
-//    review 작성 페이지
-//    사람별 리뷰 작성
-//    뱃지 확인
-//    회원 탈퇴

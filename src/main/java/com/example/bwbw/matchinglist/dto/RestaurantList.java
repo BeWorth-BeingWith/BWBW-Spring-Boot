@@ -26,5 +26,5 @@ public class RestaurantList {
     private LocalDateTime promiseTime;
 
     @ApiModelProperty(value = "방 고유값")
-    private int roomNumber;
+    private Long roomId;
 }
