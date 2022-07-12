@@ -1,5 +1,6 @@
 package com.example.bwbw.mainscreen.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
@@ -22,7 +23,9 @@ public class RestraurntList {
     @ApiModelProperty(value = "인원수", example = "3명")
     private int peopleNum;    //인원수
 
-    @ApiModelProperty(value = "만나기로한 시간")
+
+    @ApiModelProperty(value = "만나기로한 시간", example = "2022-12-11 12:00:00")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime time;    //만나기로한 시간
 
     @ApiModelProperty(value = "방 고유값")
