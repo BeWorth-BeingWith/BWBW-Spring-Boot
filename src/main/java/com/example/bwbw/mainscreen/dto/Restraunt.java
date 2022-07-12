@@ -24,6 +24,7 @@ public class Restraunt {
     @ApiModelProperty(value = "식당이름", example = "작은집")
     private String name;    //식당이름
 
+    @ApiModelProperty(value = "해당식당의 매칭내역")
     List<RestraurntList> restraurntLists;    //식당 리스트
 
 }
