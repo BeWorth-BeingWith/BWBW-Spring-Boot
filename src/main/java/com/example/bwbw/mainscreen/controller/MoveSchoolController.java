@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @Api(tags = {"학교위치로 이동"})
-@RequestMapping("/home")
+@RequestMapping("/api")
 @RequiredArgsConstructor
 @RestController
 public class MoveSchoolController {
