@@ -7,10 +7,8 @@ import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
 @Api(tags = {"지도 출력"})
@@ -35,7 +33,7 @@ public class ShowMapController {
                     @ApiImplicitParam(name = "restraunt", value = "매칭이 잡힌 식당의 좌표,이름 및 매칭내역", dataTypeClass = Restraunt.class)
             }
     )
-    public ResponseEntity<List<ShowMapResponseDto>> showPin( @RequestParam Restraunt restraunt) {
+    public ResponseEntity<List<ShowMapResponseDto>> showPin( @RequestBody Restraunt restraunt) {
 
         //TODO: 지도에서 매칭이 잡혀있는 식당들을 불러오는 로직
         return null;
