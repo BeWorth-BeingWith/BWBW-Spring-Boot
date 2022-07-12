@@ -17,7 +17,7 @@ import java.util.List;
 @RequestMapping("/home")
 @RequiredArgsConstructor
 @RestController
-public class ShowMap {
+public class ShowMapController {
 
     @ApiOperation(value = "처음 지도 불러오기",notes = "앱 실행 후 처음으로 지도를 불러오는 로직입니다")
     @GetMapping("/first-location")

@@ -19,7 +19,7 @@ import java.util.List;
 @RequestMapping("/home")
 @RequiredArgsConstructor
 @RestController
-public class MoveSchool {
+public class MoveSchoolController {
     @ApiOperation(value = "지도 보기",notes = "지도를 불러올때 매칭이 있는 식당 정보를 반환")
     @GetMapping("/school")
     @ApiImplicitParams(
