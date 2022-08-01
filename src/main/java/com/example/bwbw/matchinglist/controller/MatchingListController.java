@@ -85,7 +85,7 @@ public class MatchingListController {
     //    매칭 삭제하기 Controller
     @ApiOperation(value = "나의 매칭 글 삭제", notes = "내의 매칭 글 삭제하기")
     @ApiResponse(code=200, message="성공")
-    @DeleteMapping("/delete/my-matching")
+    @DeleteMapping("/my-matching/delete")
     public ResponseEntity<Void>  deleteMatching(@RequestParam(name = "roomId") Long roomId){
 
         return null;
