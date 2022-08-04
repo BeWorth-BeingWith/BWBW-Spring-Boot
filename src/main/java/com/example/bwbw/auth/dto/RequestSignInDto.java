@@ -8,9 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class RequestSignInDto {
 
-    @ApiModelProperty(example = "Jiwon@gmail.com")
     private String email;
 
-    @ApiModelProperty(example = "1234")
     private String password;
 }

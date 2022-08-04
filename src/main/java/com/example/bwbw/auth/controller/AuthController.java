@@ -15,6 +15,10 @@ public class AuthController {
 
     @GetMapping("/sign-in")
     @ApiOperation(value = "로그인 API", notes = "입력받은 ID와 PW로 로그인 ")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "email", value = "사용자 이메일")
+            ,@ApiImplicitParam(name = "password", value = "사용자 비밀번호")
+    })
     public String SignIn(@RequestBody RequestSignInDto requestSignInDto){
         //TODO: 로그인-1.DB에서 유저 검색
         //TODO: 로그인-2.유저 Access token 발급 및 리턴
@@ -22,7 +26,14 @@ public class AuthController {
     }
 
     @PostMapping("/sign-up")
-    @ApiOperation(value = "회원가입입 API", notes = "입력 받은 정보로 회원 가입")
+    @ApiOperation(value = "회원가입 API", notes = "입력 받은 정보로 회원 가입")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "name", value = "사용자 이름")
+            ,@ApiImplicitParam(name = "email", value = "사용자 이메일")
+            ,@ApiImplicitParam(name = "password", value = "사용자 비밀번호")
+            ,@ApiImplicitParam(name = "gender", value = "사용자 성별")
+            ,@ApiImplicitParam(name = "nickname", value = "사용자 별명")
+    })
     public String SignUp(@RequestBody RequestSignUpDto requestSignUpDto){
 
         //TODO: 회원가입-1.DB에 유저정보 저장
@@ -45,5 +56,28 @@ public class AuthController {
     public ResponseEntity<HttpStatus> AuthEmail(@PathVariable String email){
         //TODO: email 전송
         return ResponseEntity.ok(HttpStatus.OK);
+    }
+
+    /**
+     * ID 찾기
+     * @return 학교 웹메일 홈페이지
+     */
+    @GetMapping("/find-id")
+    @ApiOperation(value = "ID 찾기")
+    public String FindId(){
+        return "https://wmail.kw.ac.kr/";
+    }
+
+    /**
+     * 비밀번호 찾기
+     * @param authCode
+     * @return String 비밀번호
+     */
+    @GetMapping("find-password")
+    @ApiOperation(value = "password 찾기")
+    @ApiImplicitParam(name= "authCode", value="웹메일 전송된 비밀번호 인증 코드")
+    public String FindPassword(@RequestParam String authCode){
+        //TODO: 인증번호 비교
+        return null;
     }
 }
