@@ -19,5 +19,4 @@ public class RequestSignUpDto {
 
     private String nickname;
 
-    private String authEmail;
 }

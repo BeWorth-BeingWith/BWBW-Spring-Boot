@@ -33,7 +33,6 @@ public class AuthController {
             ,@ApiImplicitParam(name = "password", value = "사용자 비밀번호")
             ,@ApiImplicitParam(name = "gender", value = "사용자 성별")
             ,@ApiImplicitParam(name = "nickname", value = "사용자 별명")
-            ,@ApiImplicitParam(name ="authEmail", value = "사용자 학교 인증 이메일")
     })
     public String SignUp(@RequestBody RequestSignUpDto requestSignUpDto){
 
@@ -58,4 +57,29 @@ public class AuthController {
         //TODO: email 전송
         return ResponseEntity.ok(HttpStatus.OK);
     }
+
+    /**
+     * ID 찾기
+     * @return 학교 웹메일 홈페이지
+     */
+    @GetMapping("/find-id")
+    @ApiOperation(value = "ID 찾기")
+    public String FindId(){
+        return "https://wmail.kw.ac.kr/";
+    }
+
+    /**
+     * 비밀번호 찾기
+     * @param authCode
+     * @return String 비밀번호
+     */
+    @GetMapping("find-password")
+    @ApiOperation(value = "password 찾기")
+    @ApiImplicitParam(name= "authCode", value="웹메일 전송된 비밀번호 인증 코드")
+    public String FindPassword(@RequestParam String authCode){
+        //TODO: 인증번호 비교
+        return null;
+    }
+
+
 }
