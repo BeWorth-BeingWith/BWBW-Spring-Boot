@@ -58,4 +58,6 @@ public class UserInfoEntity {
     @OneToMany(mappedBy = "user")
     List<RoomEntity> rooms = new ArrayList<>();
 
+    @OneToMany(mappedBy = "user")
+    List<BadgeEntity> badges = new ArrayList<>();
 }

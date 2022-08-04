@@ -23,10 +23,6 @@ public class BadgeEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long badgeId;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private UserInfoEntity user;
-
     @Column(name = "badge_code", length = 3)
     private Integer badgeCode;
 
@@ -35,4 +31,9 @@ public class BadgeEntity {
 
     @Column(name = "acquired_at")
     private LocalDateTime acquiredAt;
+
+    // fk
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private UserInfoEntity user;
 }
