@@ -9,8 +9,8 @@ import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -28,7 +28,7 @@ public class MoveSchoolController {
                     @ApiImplicitParam(name = "y", value = "학교좌표 y값", dataTypeClass = double.class)
             }
     )
-    public ResponseEntity<List<ShowMapResponseDto>> moveToSchoolLocation(@RequestParam MoveSchoolResponseDto moveSchoolResponseDto) {
+    public ResponseEntity<List<ShowMapResponseDto>> moveToSchoolLocation(@RequestBody MoveSchoolResponseDto moveSchoolResponseDto) {
 
         //TODO: 지도에서 학교위치로 이동하는 메소드, MoveSchoolResponseDto 를 파라미터로 받아와 해당 좌표로 지도 포커싱을 이동
         //TODO: 지도의 포커싱을 움직인 다음 다시 포커싱 버튼을 터치해도 같은 메서드를 실행하면 될듯 합니다
