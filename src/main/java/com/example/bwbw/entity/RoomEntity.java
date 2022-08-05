@@ -8,6 +8,8 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @NoArgsConstructor
@@ -46,5 +48,16 @@ public class RoomEntity {
     @ManyToOne
     @JoinColumn(name = "user_id")
     private UserInfoEntity user;
+
+
+
+    @OneToMany(mappedBy = "room")
+    List<RoomPersonEntity> roomId = new ArrayList<>();
+
+    @OneToMany(mappedBy = "room")
+    List<RoomPersonEntity> userId = new ArrayList<>();
+
+    @OneToMany(mappedBy = "room")
+    List<RoomPersonEntity> restaurantId = new ArrayList<>();
 
 }

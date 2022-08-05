@@ -22,16 +22,13 @@ public class RoomPersonEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Id
     @Column(name = "room_id")
     @NotNull
     private Long roomId;
 
-    @Id
     @Column(name = "user_id")
     private Long userId;
 
-    @Id
     @Column(name = "restaurant_id")
     @NotNull
     private Long restaurantId;
@@ -42,7 +39,15 @@ public class RoomPersonEntity {
 
     // fk
     @ManyToOne
-    @JoinColumn(name = "restaurant_id")
+    @JoinColumn(name = "room_id")       //방 Id
     private RoomEntity room;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")       //유저 Id
+    private RoomEntity user;
+
+    @ManyToOne
+    @JoinColumn(name = "restaurant_id") //식당 Id
+    private RoomEntity restaurant;
 
 }
