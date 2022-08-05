@@ -63,4 +63,7 @@ public class UserInfoEntity {
 
     @OneToMany(mappedBy = "user")
     List<EmailAuthEntity> emailAuths = new ArrayList<>();
+
+    @OneToMany(mappedBy = "user")
+    List<RoomPersonEntity> roomPerson = new ArrayList<>();
 }

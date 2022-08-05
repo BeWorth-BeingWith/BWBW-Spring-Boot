@@ -37,4 +37,7 @@ public class RestaurantEntity {
 
     @OneToMany(mappedBy = "restaurant")
     List<RoomEntity> rooms = new ArrayList<>();
+
+    @OneToMany(mappedBy = "restaurant")
+    List<RoomPersonEntity> roomPerson = new ArrayList<>();
 }
