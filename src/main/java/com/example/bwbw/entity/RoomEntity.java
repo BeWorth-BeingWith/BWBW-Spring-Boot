@@ -47,4 +47,8 @@ public class RoomEntity {
     @JoinColumn(name = "user_id")
     private UserInfoEntity user;
 
+    @ManyToOne
+    @JoinColumn(name = "restaurant_id")
+    private RestaurantEntity restaurant;
+
 }
