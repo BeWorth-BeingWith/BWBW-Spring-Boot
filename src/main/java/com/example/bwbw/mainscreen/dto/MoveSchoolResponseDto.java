@@ -14,10 +14,10 @@ import lombok.Setter;
 @NoArgsConstructor
 public class MoveSchoolResponseDto {
 
-   @ApiModelProperty(value = "x축", example = "37.619802")
-   private double x;
+   @ApiModelProperty(value = "위도", example = "37.619802")
+   private double latitude;
 
-   @ApiModelProperty(value = "y축", example = "127.060891")
-   private double y;    //학교 좌표표
+   @ApiModelProperty(value = "경도", example = "127.060891")
+   private double longitude;    //학교 좌표표
 
 }
