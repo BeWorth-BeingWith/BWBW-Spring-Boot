@@ -13,4 +13,3 @@ public class MatchingListRequestDto { // 모집공고 리스트 들어왔을 때
 
     private String orderedBy;
 }
-

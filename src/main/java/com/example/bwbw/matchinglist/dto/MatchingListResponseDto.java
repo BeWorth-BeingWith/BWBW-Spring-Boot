@@ -18,5 +18,5 @@ import java.util.List;
 public class MatchingListResponseDto { // 모집공고 리스트 들어왔을 때 Reponse
 
     @ApiModelProperty(value = "모든 식당의 매칭 리스트")
-    List<Restaurant> restaurants = new ArrayList<Restaurant>();
+    List<MatchingListRestaurant> restaurants = new ArrayList<MatchingListRestaurant>();
 }

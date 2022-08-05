@@ -18,5 +18,5 @@ import java.util.List;
 public class ConfirmMyPromiseResponseDto {
 
     @ApiModelProperty(value = "나의 확정된 매칭에 대한 정보")
-    List<Restaurant> restaurants = new ArrayList<Restaurant>();
+    List<MatchingListRestaurant> restaurants = new ArrayList<MatchingListRestaurant>();
 }

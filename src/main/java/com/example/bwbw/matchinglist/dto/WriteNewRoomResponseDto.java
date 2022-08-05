@@ -18,10 +18,10 @@ public class WriteNewRoomResponseDto { // 방 만들기 작성 처음 들어 갔
     private String userEmail;
 
     @ApiModelProperty(value = "패스워드")
-    private String passWord;
+    private String password;
 
     @ApiModelProperty(value = "닉네임", example = "빵준")
-    private String nickName;
+    private String nickname;
 
     @ApiModelProperty(value = "성별", example = "남성")
     private String gender;

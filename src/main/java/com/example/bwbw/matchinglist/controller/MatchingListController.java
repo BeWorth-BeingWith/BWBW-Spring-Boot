@@ -25,7 +25,7 @@ public class MatchingListController {
     @ApiOperation(value = "세부 모집 공고", notes = "개별적인 세부 모집 공고 가져오기")
     @ApiResponse(code=200, message="성공")
     @GetMapping("/detail-matching-post")
-    public ResponseEntity<List<DetailMatchingPostResponseDto>>  detailPostRead(@RequestParam(name = "roomId", value = "방 고유값") Long roomId){
+    public ResponseEntity<List<DetailMatchingPostResponseDto>>  detailPostRead(@RequestParam(name = "roomId") Long roomId){
 
         return null;
     }

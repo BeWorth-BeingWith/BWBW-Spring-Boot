@@ -17,7 +17,7 @@ public class ReviseMyRoomRequestDto {
 
     private String promiseLocation;
 
-    private int peopleNum;
+    private Integer peopleNum;
 
     private LocalDateTime promiseTime;
 }
