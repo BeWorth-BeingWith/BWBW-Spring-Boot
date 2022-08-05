@@ -60,4 +60,7 @@ public class UserInfoEntity {
 
     @OneToMany(mappedBy = "user")
     List<BadgeEntity> badges = new ArrayList<>();
+
+    @OneToMany(mappedBy = "user")
+    List<EmailAuthEntity> emailAuths = new ArrayList<>();
 }
