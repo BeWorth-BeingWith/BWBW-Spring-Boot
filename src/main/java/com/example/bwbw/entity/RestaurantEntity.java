@@ -7,6 +7,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @NoArgsConstructor
@@ -32,4 +34,7 @@ public class RestaurantEntity {
     @Column(name = "name")
     @NotNull
     private String name;
+
+    @OneToMany(mappedBy = "restaurant")
+    List<RoomEntity> rooms = new ArrayList<>();
 }
