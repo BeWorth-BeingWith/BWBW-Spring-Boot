@@ -31,11 +31,11 @@ public class ReviewEntity {
     private Long reviewerId;
 
     @Column(name = "review_target_id")
-    private Long reviewedId;
+    private Long reviewTargetId;
 
 
     @Column(name = "created_at")
-    private LocalDateTime time;
+    private LocalDateTime createdAt;
 
 
 }
