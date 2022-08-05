@@ -51,7 +51,7 @@ public class RoomEntity {
 
 
     @OneToMany(mappedBy = "room")
-    List<RoomPersonEntity> roomperson = new ArrayList<>();
+    List<RoomPersonEntity> roomPerson = new ArrayList<>();
 
 
     @ManyToOne
