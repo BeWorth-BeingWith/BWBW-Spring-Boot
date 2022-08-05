@@ -14,7 +14,7 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Restraunt {
+public class Restaurant {
     @ApiModelProperty(value = "x축", example = "37.620170")
     private double x;
 
@@ -25,6 +25,6 @@ public class Restraunt {
     private String name;    //식당이름
 
     @ApiModelProperty(value = "해당식당의 매칭내역")
-    List<RestraurntList> restraurntLists;    //식당 리스트
+    List<RestaurantList> restaurantLists;    //식당 리스트
 
 }

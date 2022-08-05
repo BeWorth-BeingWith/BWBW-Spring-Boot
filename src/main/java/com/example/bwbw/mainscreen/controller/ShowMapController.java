@@ -1,5 +1,5 @@
 package com.example.bwbw.mainscreen.controller;
-import com.example.bwbw.mainscreen.dto.Restraunt;
+import com.example.bwbw.mainscreen.dto.Restaurant;
 import com.example.bwbw.mainscreen.dto.ShowMapResponseDto;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
@@ -27,13 +27,13 @@ public class ShowMapController {
     }
 
     @ApiOperation(value = "지도 속 핀 불러오기",notes = "지도를 불러올때 매칭이 있는 식당을 핀으로 표시하기 위한 로직입니다")
-    @GetMapping("/restraunt")
+    @GetMapping("/restaurant")
     @ApiImplicitParams(
             {
-                    @ApiImplicitParam(name = "restraunt", value = "매칭이 잡힌 식당의 좌표,이름 및 매칭내역", dataTypeClass = Restraunt.class)
+                    @ApiImplicitParam(name = "restaurant", value = "매칭이 잡힌 식당의 좌표,이름 및 매칭내역", dataTypeClass = Restaurant.class)
             }
     )
-    public ResponseEntity<List<ShowMapResponseDto>> showPin( @RequestBody Restraunt restraunt) {
+    public ResponseEntity<List<ShowMapResponseDto>> showPin( @RequestBody Restaurant restaurant) {
 
         //TODO: 지도에서 매칭이 잡혀있는 식당들을 불러오는 로직
         return null;

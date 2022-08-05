@@ -17,7 +17,7 @@ import java.util.List;
 @NoArgsConstructor
 public class ShowMapResponseDto {
 
-    List<Restraunt> restraunts = new ArrayList<Restraunt>();    //식당(안에 식당리스트 클래스도 포함되어있음)
+    List<Restaurant> restaurants = new ArrayList<Restaurant>();    //식당(안에 식당리스트 클래스도 포함되어있음)
 
 
 }
