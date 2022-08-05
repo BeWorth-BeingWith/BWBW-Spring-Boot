@@ -50,14 +50,13 @@ public class RoomEntity {
     private UserInfoEntity user;
 
 
-
     @OneToMany(mappedBy = "room")
-    List<RoomPersonEntity> roomId = new ArrayList<>();
+    List<RoomPersonEntity> roomperson = new ArrayList<>();
 
-    @OneToMany(mappedBy = "room")
-    List<RoomPersonEntity> userId = new ArrayList<>();
 
-    @OneToMany(mappedBy = "room")
-    List<RoomPersonEntity> restaurantId = new ArrayList<>();
+    @ManyToOne
+    @JoinColumn(name = "restaurant_id")
+    private RestaurantEntity restaurant;
+
 
 }

@@ -44,10 +44,10 @@ public class RoomPersonEntity {
 
     @ManyToOne
     @JoinColumn(name = "user_id")       //유저 Id
-    private RoomEntity user;
+    private UserInfoEntity user;
 
     @ManyToOne
     @JoinColumn(name = "restaurant_id") //식당 Id
-    private RoomEntity restaurant;
+    private RestaurantEntity restaurant;
 
 }
