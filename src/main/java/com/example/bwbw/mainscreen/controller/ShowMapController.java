@@ -1,5 +1,5 @@
 package com.example.bwbw.mainscreen.controller;
-import com.example.bwbw.mainscreen.dto.Restaurant;
+import com.example.bwbw.mainscreen.dto.HomeRestaurant;
 import com.example.bwbw.mainscreen.dto.ShowMapResponseDto;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
@@ -30,10 +30,10 @@ public class ShowMapController {
     @GetMapping("/restaurant")
     @ApiImplicitParams(
             {
-                    @ApiImplicitParam(name = "restaurant", value = "매칭이 잡힌 식당의 좌표,이름 및 매칭내역", dataTypeClass = Restaurant.class)
+                    @ApiImplicitParam(name = "restaurant", value = "매칭이 잡힌 식당의 좌표,이름 및 매칭내역", dataTypeClass = HomeRestaurant.class)
             }
     )
-    public ResponseEntity<List<ShowMapResponseDto>> showPin( @RequestBody Restaurant restaurant) {
+    public ResponseEntity<List<ShowMapResponseDto>> showPin( @RequestBody HomeRestaurant homeRestaurant) {
 
         //TODO: 지도에서 매칭이 잡혀있는 식당들을 불러오는 로직
         return null;

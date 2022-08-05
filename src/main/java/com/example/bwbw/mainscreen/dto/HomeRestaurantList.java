@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class RestaurantList {
+public class HomeRestaurantList {
     @ApiModelProperty(value = "매칭을 만든 사람", example = "이창훈")
     private String leaderName;    //방판 사람 이름
 
