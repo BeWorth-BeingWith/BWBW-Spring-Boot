@@ -16,4 +16,6 @@ public class RequestSignUpDto {
     private String gender;
 
     private String nickname;
+
+    private String major;
 }
