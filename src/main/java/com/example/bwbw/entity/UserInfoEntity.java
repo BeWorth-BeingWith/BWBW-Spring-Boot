@@ -1,5 +1,7 @@
 package com.example.bwbw.entity;
 
+import com.example.bwbw.auth.dto.RequestSignInDto;
+import com.example.bwbw.auth.dto.RequestSignUpDto;
 import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -68,12 +70,33 @@ public class UserInfoEntity {
     List<RoomPersonEntity> roomPerson = new ArrayList<>();
 
     @Builder
-    public UserInfoEntity(String nickname, String password, String email, Integer gender, String major)  {
+    public UserInfoEntity(String nickname, String password, String email, Integer gender, String major, String refreshToken, LocalDateTime createdAt, LocalDateTime modifiedAt, LocalDateTime modifiedMajorAt)  {
         this.nickname = nickname;
         this.password = password;
         this.email = email;
         this.gender = gender;
         this.major = major;
 
+        this.refreshToken = refreshToken;
+        this.createdAt = createdAt;
+        this.modifiedAt = modifiedAt;
+        this.modifiedMajorAt = modifiedMajorAt;
+
+    }
+
+    public static UserInfoEntity createUser(RequestSignUpDto requestSignUpDto) {        //회원가입 유저 생성
+        UserInfoEntity userInfoEntity = UserInfoEntity.builder()
+                .nickname(builder().nickname)
+                .password(builder().password)
+                .email(builder().email)
+                .gender(builder().gender)
+                .gender(builder().gender)
+                .refreshToken(builder().refreshToken)
+                .createdAt(builder().createdAt)
+                .modifiedAt(builder().modifiedAt)
+                .modifiedMajorAt(builder().modifiedMajorAt)
+                .build();
+
+        return userInfoEntity;
     }
 }
