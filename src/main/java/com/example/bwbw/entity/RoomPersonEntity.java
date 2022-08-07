@@ -22,17 +22,6 @@ public class RoomPersonEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "room_id")
-    @NotNull
-    private Long roomId;
-
-    @Column(name = "user_id")
-    private Long userId;
-
-    @Column(name = "restaurant_id")
-    @NotNull
-    private Long restaurantId;
-
     @Column(name = "is_owner")
     private boolean isOwner;
 
