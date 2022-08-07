@@ -59,7 +59,7 @@ public class MatchingListController {
     @ApiOperation(value = "나의 확정 매칭 확인", notes = "확정된 나의 매칭 약속 가져오기")
     @ApiResponse(code=200, message="성공")
     @GetMapping("/my-matching/confirm")
-    public ResponseEntity<ConfirmMyPromiseResponseDto>  confrimMyMatching(){
+    public ResponseEntity<ConfirmMyPromiseResponseDto>  confirmMyMatching(){
 
         return null;
     }
