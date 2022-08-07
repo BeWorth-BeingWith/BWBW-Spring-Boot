@@ -66,4 +66,14 @@ public class UserInfoEntity {
 
     @OneToMany(mappedBy = "user")
     List<RoomPersonEntity> roomPerson = new ArrayList<>();
+
+    @Builder
+    public UserInfoEntity(String nickname, String password, String email, Integer gender, String major)  {
+        this.nickname = nickname;
+        this.password = password;
+        this.email = email;
+        this.gender = gender;
+        this.major = major;
+
+    }
 }
