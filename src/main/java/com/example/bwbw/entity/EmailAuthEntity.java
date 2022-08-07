@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Builder
 @Getter
-@Table(name = "USER_INFO")
+@Table(name = "EMAIL_AUTH")
 public class EmailAuthEntity {
 
     @Id
