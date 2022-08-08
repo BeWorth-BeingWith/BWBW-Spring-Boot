@@ -28,9 +28,9 @@ public class RoomEntity {
     @NotNull
     private String roomWriting;
 
-    @Column(name = "matching_count")
+    @Column(name = "matching_person_max")
     @NotNull
-    private Integer matchingCount;
+    private Integer matchingPersonMax;
 
     @Column(name = "matching_time")
     @NotNull
@@ -43,6 +43,12 @@ public class RoomEntity {
     @Column(name = "modified_at")
     @NotNull
     private LocalDateTime modifiedAt;
+
+    @NotNull
+    private Integer gender;
+
+    @NotNull
+    private String name;
 
     // fk
     @ManyToOne
