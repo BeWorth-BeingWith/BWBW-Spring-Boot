@@ -1,7 +1,9 @@
 package com.example.bwbw.matchinglist.controller;
 
 import com.example.bwbw.matchinglist.dto.*;
+import com.example.bwbw.matchinglist.service.MatchingDetailService;
 import io.swagger.annotations.*;
+import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,7 +12,11 @@ import java.util.List;
 @Api(tags = "매칭 리스트로 이동할 때 Api")
 @RestController // 컨트롤러 클래스 하위 메서드에 @ResponseBody 어노테이션을 붙이지 않아도 문자열과 JSON 등을 전송 가능
 @RequestMapping("/api")
+@AllArgsConstructor
 public class MatchingListController {
+
+    private final MatchingDetailService matchingDetailService;
+
 
     //    모집공고 리스트 들어왔을 때 Controller
     @ApiOperation(value = "매칭 모집 리스트 목록", notes = "모든 매칭 정보 가져오기")
@@ -23,11 +29,18 @@ public class MatchingListController {
 
     //    모집공고 세부적으로 들어갔을 때 Controller
     @ApiOperation(value = "세부 모집 공고", notes = "개별적인 세부 모집 공고 가져오기")
-    @ApiResponse(code=200, message="성공")
+    @ApiResponses(
+            {
+                    @ApiResponse(code = 200, message = "성공"),
+                    @ApiResponse(code = 400, message = "해당되는 방이 없을 경우")
+            }
+    )
     @GetMapping("/detail-matching-post")
-    public ResponseEntity<List<DetailMatchingPostResponseDto>>  detailPostRead(@RequestParam(name = "roomId") Long roomId){
+    public ResponseEntity<DetailMatchingPostResponseDto>  detailPostRead(@RequestParam(name = "roomId") Long roomId){
 
-        return null;
+        DetailMatchingPostResponseDto matchingInfo = matchingDetailService.findByRoomId(roomId);
+
+        return ResponseEntity.ok().body(matchingInfo);
     }
 
     //    방 만들기 작성 처음 들어 갔을 때 Controller
