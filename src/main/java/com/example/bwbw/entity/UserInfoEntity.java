@@ -16,7 +16,6 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 @Getter
-@Setter
 @Table(name = "USER_INFO")
 public class UserInfoEntity {
 

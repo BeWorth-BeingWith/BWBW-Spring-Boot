@@ -37,15 +37,15 @@ public class RequestSignUpDto {
     public UserInfoEntity toEntity() {        //회원가입 유저 생성
 
         return UserInfoEntity.builder()
-                .nickname(builder().nickname)
-                .email(builder().email)
-                .gender(builder().gender)
-                .password(builder().password)
-                .major(builder().major)
+                .nickname(nickname)
+                .email(email)
+                .gender(gender)
+                .password(password)
+                .major(major)
                 .refreshToken(null)         //아직 모름
                 .createdAt(LocalDateTime.now())
                 .modifiedAt(LocalDateTime.now())
-                .modifiedMajorAt(LocalDateTime.now())      //전공이 변경되면 초기화
+                .modifiedMajorAt(null)      //전공이 변경되면 초기화
                 .build();
     }
 

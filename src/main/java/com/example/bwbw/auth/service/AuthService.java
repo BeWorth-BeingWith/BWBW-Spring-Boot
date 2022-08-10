@@ -2,27 +2,20 @@ package com.example.bwbw.auth.service;
 
 import com.example.bwbw.auth.dto.RequestSignUpDto;
 import com.example.bwbw.repository.UserInfoRepository;
-import lombok.RequiredArgsConstructor;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
-
-@RequiredArgsConstructor
-@Transactional
 @Service
+@AllArgsConstructor
 public class AuthService {
 
-    private static UserInfoRepository userInfoRepository = null;
+    private final UserInfoRepository userInfoRepository;
 
-    public AuthService(UserInfoRepository userInfoRepository)
-    {
-        this.userInfoRepository = userInfoRepository;
-    }
+    public Long createUser(RequestSignUpDto requestSignUpDto) {
 
-    public static Long createUser(RequestSignUpDto requestSignUpDto) {
         //vailation 추가예정
         return userInfoRepository.save(requestSignUpDto.toEntity()).getId();
-    }
 
+    }
 
 }
