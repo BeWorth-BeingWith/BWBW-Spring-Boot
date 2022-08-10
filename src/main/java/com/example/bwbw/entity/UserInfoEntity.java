@@ -1,23 +1,22 @@
 package com.example.bwbw.entity;
 
-import com.example.bwbw.auth.dto.RequestSignInDto;
-import com.example.bwbw.auth.dto.RequestSignUpDto;
+
 import com.sun.istack.NotNull;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+
+
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 @Getter
+@Setter
 @Table(name = "USER_INFO")
 public class UserInfoEntity {
 
@@ -70,33 +69,18 @@ public class UserInfoEntity {
     List<RoomPersonEntity> roomPerson = new ArrayList<>();
 
     @Builder
-    public UserInfoEntity(String nickname, String password, String email, Integer gender, String major, String refreshToken, LocalDateTime createdAt, LocalDateTime modifiedAt, LocalDateTime modifiedMajorAt)  {
+    public UserInfoEntity(String nickname, String password, String email, Integer gender, String major)  {
         this.nickname = nickname;
         this.password = password;
         this.email = email;
         this.gender = gender;
         this.major = major;
 
-        this.refreshToken = refreshToken;
-        this.createdAt = createdAt;
-        this.modifiedAt = modifiedAt;
-        this.modifiedMajorAt = modifiedMajorAt;
+        this.refreshToken = null;           //나중에 추가
+        this.createdAt = LocalDateTime.now();
+        this.modifiedAt = LocalDateTime.now();
+        this.modifiedMajorAt = null;        //전공을 수정시 초기화
 
     }
 
-    public static UserInfoEntity createUser(RequestSignUpDto requestSignUpDto) {        //회원가입 유저 생성
-        UserInfoEntity userInfoEntity = UserInfoEntity.builder()
-                .nickname(builder().nickname)
-                .password(builder().password)
-                .email(builder().email)
-                .gender(builder().gender)
-                .gender(builder().gender)
-                .refreshToken(builder().refreshToken)
-                .createdAt(builder().createdAt)
-                .modifiedAt(builder().modifiedAt)
-                .modifiedMajorAt(builder().modifiedMajorAt)
-                .build();
-
-        return userInfoEntity;
-    }
 }
