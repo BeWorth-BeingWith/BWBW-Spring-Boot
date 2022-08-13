@@ -19,7 +19,6 @@ public class EmailAuthEntity {
 
     @Id
     @Column(name = "email_auth_id")
-    @NotNull
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long emailAuthId;
 

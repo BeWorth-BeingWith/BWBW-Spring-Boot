@@ -24,15 +24,21 @@ public class DetailMatchingPostResponseDto {
     @ApiModelProperty(value = "약속 장소", example = "광운대역 1번 출구")
     private String promiseLocation;
 
-    @ApiModelProperty(value = "모집 인원 수", example = "4")
-    private Integer peopleNum;
+    @ApiModelProperty(value = "현재 모집 인원 수", example = "2")
+    private Integer peopleCount;
 
-    @ApiModelProperty(value = "성별", example = "남성")
-    private String gender;
+    @ApiModelProperty(value = "최대 모집 인원 수", example = "4")
+    private Integer peopleMax;
+
+    @ApiModelProperty(value = "희망 성별", example = "1 (남성 = 0, 여성 = 1, 상관 x = 2")
+    private Integer gender;
 
     @ApiModelProperty(value = "식당 이름", example = "작은집")
     private String restaurantName; // 식당 이름
 
     @ApiModelProperty(value = "짧은 모집글", example = "내일 12시에 작은집에서 같이 밥 드실 3명 구해요~ 공강 좋아!")
     private String shortText; // 짧은 모집글 (100자 제한)
+
+    @ApiModelProperty(value = "방장 이름", example = "김병준")
+    private String ownerUser;
 }
