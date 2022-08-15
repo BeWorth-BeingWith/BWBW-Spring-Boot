@@ -1,15 +1,15 @@
 package com.example.bwbw.entity;
 
+
 import com.sun.istack.NotNull;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+
+
 
 @Entity
 @NoArgsConstructor
@@ -66,4 +66,20 @@ public class UserInfoEntity {
 
     @OneToMany(mappedBy = "user")
     List<RoomPersonEntity> roomPerson = new ArrayList<>();
+
+    @Builder
+    public UserInfoEntity(String nickname, String password, String email, Integer gender, String major)  {
+        this.nickname = nickname;
+        this.password = password;
+        this.email = email;
+        this.gender = gender;
+        this.major = major;
+
+        this.refreshToken = null;           //나중에 추가
+        this.createdAt = LocalDateTime.now();
+        this.modifiedAt = LocalDateTime.now();
+        this.modifiedMajorAt = null;        //전공을 수정시 초기화
+
+    }
+
 }
